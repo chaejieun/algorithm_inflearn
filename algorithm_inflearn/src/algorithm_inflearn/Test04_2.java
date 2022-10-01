@@ -3,6 +3,20 @@ package algorithm_inflearn;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+// 4. 단어 뒤집기
+// N개의 단어가 주어지면 각 단어를 뒤집어 출력하는 프로그램을 작성하세요.
+/*
+ *  3
+	good
+	Time
+	Big
+	
+	 -> 
+	doog
+	emiT
+	giB
+ */
+
 public class Test04_2 {
 	
 	public ArrayList<String> solution(int n, String[] str) {
