@@ -1,5 +1,3 @@
-package algorithm_inflearn;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 

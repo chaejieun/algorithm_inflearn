@@ -1,5 +1,3 @@
-package algorithm_inflearn;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,29 +10,23 @@ import java.util.Scanner;
    ex)  gooG -> yes
  */
 
-public class Test07 {
+public class Test07_2 {
 	
 	public String solution(String str) {
-		String answer= "YES"; 
-		// 짝수 개수의 문자인 경우, 4/2 -> 2니니깐 0,1만 비교 
-		// 2를 나눠서 0번과 마지막 문자 비교, 1번과 문자-1 문자 비교해서 같으면 YES
-		// 홀수 개수의 문자인 경우, 5/2를 해도 2니깐 0,1까지만 비교 
+		String answer= "NO"; 
+		String tmp = new StringBuilder(str).reverse().toString();
 		
-		// 대소문자 비교 안할 수 있도록 바꿔주기
-		str = str.toUpperCase();
-		int len = str.length();
-		for(int i = 0; i < len/2; i++) {
-			if ( str.charAt(i) != str.charAt(len-i-1) ) {
-				// 여기서 끝내버리도록 한다
-				return "NO";
-			}
+		// equalsIgnoreCarse
+		// 대소문자 구분없이 비교할 수 있는 메서드
+		if( str.equalsIgnoreCase(tmp)) {
+			answer = "YES";
 		}
 		
 		return answer;
 	}
 	
 	public static void main(String[] args) {
-			Test07 T = new Test07();
+			Test07_2 T = new Test07_2();
 			Scanner kb = new Scanner(System.in);
 			String str =  kb.next();
 			System.out.print(T.solution(str));

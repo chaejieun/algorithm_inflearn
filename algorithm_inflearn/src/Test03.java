@@ -1,5 +1,3 @@
-package algorithm_inflearn;
-
 import java.util.Scanner;
 
 // 3. 문장 속 단어 

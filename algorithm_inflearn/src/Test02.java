@@ -1,4 +1,4 @@
-package algorithm_inflearn;
+
 
 import java.util.Scanner;
 
