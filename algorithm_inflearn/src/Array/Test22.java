@@ -26,9 +26,36 @@ ex)
 
 public class Test22 {
 	
+	// 12, 3, 6, 9시 방향 상하좌우를 비교하기 위한 
+	int [] dx = {-1, 0, 1 , 0 }; // 세로 행
+	int [] dy = {0, 1, 0, -1 };  // 가로 열
 	
 	public int solution(int n, int[][] arr) {
-		int answer = Integer.MIN_VALUE;		// 제일 작은 값으로 초기화
+		int answer = 0;
+		
+		for(int i =0; i <n; i++) {
+			for (int j=0; j<n; j++) {
+				boolean flag = true;
+				for(int k=0; k<4; k++){
+					int nx = i+dx[k]; // 행 좌표
+					int ny = j+dy[k]; // 열 좌표
+					// 1. (0,0) 과 같은 인덱스가 0인 경우와, 인덱스가 n보다 큰 경우  제외시켜야 함
+					// 2. (1,0) 과 같은 인덱스가 0인 경우와, 인덱스가 n보다 큰 경우  제외시켜야 함
+					// 3. arr[i][j]는 나 자신(중심)보다 크면 봉우리가 아님.
+					if(nx>=0 && nx<n 
+							&& ny>=0 && ny<n 
+							&& arr[nx][ny]>=arr[i][j]){
+						flag=false;
+						break;
+					}
+				}
+				// flag가 참일 경우에는 봉우리라는 것을 의미
+				if( flag ) {
+					answer++;
+				}
+			}
+		}
+		
 		return answer;
 	}
 	
